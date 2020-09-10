@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/todoFragment"
+        android:name="com.example.testapp.ui.todo.TodoFragment"
+        android:label="Todos"
+        tools:layout="@layout/todo_fragment" >
+        <action
+            android:id="@+id/action_todoFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.example.testapp.ui.userdetail.UserDetailFragment"
+        android:label="User Detail"
+        tools:layout="@layout/user_detail_fragment" />
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.testapp.ui.user.UserFragment"
+        android:label="User"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.testapp.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_todoFragment"
+            app:destination="@id/todoFragment" />
+    </fragment>
+
+</navigation>
